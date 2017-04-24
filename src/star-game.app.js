@@ -46,7 +46,7 @@ const Button = (props) => {
       break;
   	case false:
     	button =
-        <button className="btn btn-danger">
+        <button className="btn btn-danger" onClick={ () => {props.resetSelectedNumbers(); } }>
           <i className="fa fa-times"></i>
         </button>;      
       break;
@@ -151,6 +151,12 @@ class Game extends React.Component {
       													.filter(number => number !== clickedNumber)
     }));
   };
+  resetSelectedNumbers = () => {
+    this.setState({
+      answerIsCorrect: null,
+      selectedNumbers: []
+    })
+  };
   checkAnswer = () => {
   	this.setState(prevState => ({
     	answerIsCorrect: prevState.randomNumberOfStars ===
@@ -214,6 +220,7 @@ class Game extends React.Component {
           <Button selectedNumbers={selectedNumbers}
           				checkAnswer={this.checkAnswer}
                   acceptAnswer={this.acceptAnswer}
+                  resetSelectedNumbers={this.resetSelectedNumbers}
                   answerIsCorrect={answerIsCorrect}
                   redraw={this.redraw}
                   redrawCount={redrawCount}
