@@ -1,0 +1,47 @@
+.container-box{
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+span {
+	display: inline-block;
+  margin: 0.5em;
+  text-align: center;
+  background-color: #ccc;
+  width: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.selected{
+	background-color: #eee;
+  color: #ddd;
+  cursor: not-allowed;
+}
+
+.used{
+	background-color: #aaddaa;
+  color: #99bb99;
+  cursor: not-allowed;
+}
+
+.disabled{
+	cursor: not-allowed;
+}
+
+.enabled{
+	cursor: pointer;
+}
+
+.circle{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.large{
+  font-size: 25px;
+  margin: 0.5em;
+}
